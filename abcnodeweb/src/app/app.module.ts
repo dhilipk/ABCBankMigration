@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BaseRequestOptions, HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 
 import { AuthenticationService } from './authentication/authentication.service';
+import { AuthenticateGuard } from './guard/authenticate.guard';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { AuthenticationService } from './authentication/authentication.service';
     BankRoutingModule
   ],
   providers: [
-    AuthenticationService
+    AuthenticateGuard,
+    AuthenticationService,
+    BaseRequestOptions
   ],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
