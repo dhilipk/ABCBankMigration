@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { SignInComponent } from '../sign-in/sign-in.component';
 import { AccountsComponent } from '../accounts/accounts.component';
+
 import { AccountStatementComponent } from '../accounts/account-statement/account-statement.component';
 import { AuthenticateGuard } from '../guard/authenticate.guard';
 import { CobComponent } from '../cob/cob.component';
@@ -18,11 +19,14 @@ const routes: Routes = [
     { path: 'banking/fundTransfer', component: FundTransferComponent },
     { path: 'banking/benificiary', component: BenificiaryComponent },
     { path: 'cob', component: CobComponent },
+    { path: 'accounts', component: AccountsComponent },
+    { path: 'accounts/summary', component: AccountsComponent },
     { path: '**', redirectTo: 'aboutUs' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthenticateGuard]
 })
 export class BankRoutingModule { }

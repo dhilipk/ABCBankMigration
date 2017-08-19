@@ -1,6 +1,10 @@
 <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark bg-purple scrolling-navbar" [containerInside]="false">
     <logo>
-        <a class="logo navbar-brand"><strong>Navbar</strong></a>
+        <a class="logo navbar-brand">
+          <span class="h2-responsice font-bold" style="color:#FFF">ABC</span>
+          <br>
+          <span class="h2-responsice font-bold" style="color:#FFF">BANK</span>
+        </a>
     </logo>
     <links>
         <ul class="navbar-nav">
@@ -26,5 +30,30 @@
                 <a class="nav-link waves-light" [routerLink]="['/cob']" mdbRippleRadius>COB</a>
             </li>
         </ul>
+        <ul class="navbar-nav ml-auto">
+          <li>
+            <div class="text-center">
+                <button class="btn btn-default mt-1 waves-effect waves-light" data-toggle="modal" data-target="#basicExample" (click)="side.show()" mdbRippleRadius>
+                  Logout <i class="fa fa-sign-in ml-1"></i>
+                </button>
+            </div>
+          </li>
+        </ul>
     </links>
 </mdb-navbar>
+
+<div mdbModal #side="mdb-modal" class="modal fade right" id="side" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-side modal-top-right" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+              <p class="h6-responsice font-bold">
+                Are you sure want to logout ?
+              </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary waves-light" data-dismiss="modal" (click)="side.hide()" mdbRippleRadius>Cancel</button>
+                <button type="button" class="btn btn-warning waves-light" (click)="logout()" (click)="side.hide()" mdbRippleRadius>Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
