@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { BankRoutingModule } from './bank-routing/bank-routing.module';
 import { FormsModule } from '@angular/forms';
 
@@ -22,10 +23,12 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
+    MDBBootstrapModule.forRoot(),
     FormsModule,
     BankRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }
