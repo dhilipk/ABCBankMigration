@@ -11,3 +11,5 @@ with NPM 3 or higher.
 ```bash
 npm install -g @angular/cli
 ```
+##NVM Installation
+https://github.com/coreybutler/nvm-windows/releases
