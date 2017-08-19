@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Http } from '@angular/http';
+import { Router } from '@angular/router'
+
+import { AuthenticationService } from '../authentication/authentication.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,15 +10,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-
-  validationInProgress: Boolean = false;
-  constructor(private router: Router) { }
+  model: any = {};
+  loading: Boolean = false;
+  constructor(private http:Http, private authenticationService:AuthenticationService, private router: Router) { }
 
   ngOnInit() {
   }
 
   public login() {
-    this.validationInProgress = true;
-    this.router.navigate(['/accounts']);
+    this.loading = true;
+    this.authenticationService.login(this.model.username, this.model.password)
+    .subscribe(result => {
+      if (result === true) {
+        this.router.navigate(['/accounts']);
+      } else {
+        this.loading = false;
+      }
+    });
   }
+
 }
