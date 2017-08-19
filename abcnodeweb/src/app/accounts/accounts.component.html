@@ -1,64 +1,36 @@
-<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark bg-purple scrolling-navbar" [containerInside]="false">
-    <logo>
-        <a class="logo navbar-brand"><strong>Navbar</strong></a>
-    </logo>
-    <links>
-        <ul class="navbar-nav">
-            <li class="nav-item dropdown waves-light" dropdown>
-                <a dropdownToggle class="nav-link dropdown-toggle waves-light" mdbRippleRadius>Account<span class="caret"></span></a>
-                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                    <a class="dropdown-item waves-light" [routerLink]="['/accounts/summary']"mdbRippleRadius>Summary</a>
-                    <a class="dropdown-item waves-light" [routerLink]="['/accounts/viewStatement']" mdbRippleRadius>View Statement</a>
-                    <a class="dropdown-item waves-light" mdbRippleRadius>Fixed Deposit</a>
-                    <a class="dropdown-item waves-light" mdbRippleRadius>Recurring Deposit</a>
-                    <a class="dropdown-item waves-light" mdbRippleRadius>TDS Enquire</a>
+<app-accounts-header></app-accounts-header>
+<div class="hm-black-light" style="height: 100%;">
+    <div class="full-bg-img flex-center">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                  <table class="table table-hover account-summary">
+                      <thead class="mdb-color darken-3">
+                          <tr class="text-white">
+                              <th colspan="2" class="text-center">Account Summary</th>
+                          </tr>
+                      </thead>
+                      <tbody class="grey-text">
+                          <tr>
+                              <td>Account Name</td>
+                              <td>test</td>
+                          </tr>
+                          <tr>
+                              <td>Account Number</td>
+                              <td>test</td>
+                          </tr>
+                          <tr>
+                              <td>Branch Name</td>
+                              <td>test</td>
+                          </tr>
+                          <tr>
+                              <td>Account Balance</td>
+                              <td>test</td>
+                          </tr>
+                      </tbody>
+                    </table>
                 </div>
-            </li>
-            <li class="nav-item dropdown waves-light" dropdown>
-                <a dropdownToggle class="nav-link dropdown-toggle waves-light" mdbRippleRadius>Fund Transfer<span class="caret"></span></a>
-                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                    <a class="dropdown-item waves-light" [routerLink]="['/fundTransfer/thirdParty']" mdbRippleRadius>Third Party Funds Transfer</a>
-                    <a class="dropdown-item waves-light" [routerLink]="['/fundTransfer/specialPayment']" mdbRippleRadius>Special Payments</a>
-                    <a class="dropdown-item waves-light" mdbRippleRadius>VISA CardPay</a>
-                </div>
-            </li>
-        </ul>
-    </links>
-</mdb-navbar>
-<!-- Main -->
-    <div class="hm-black-light" style="height: 100%;">
-        <div class="full-bg-img flex-center">
-            <div class="container">
-                <div class="card">
-                    <div class="card-body">
-                      <table class="table table-hover account-summary">
-                          <thead class="mdb-color darken-3">
-                              <tr class="text-white">
-                                  <th colspan="2" class="text-center">Account Summary</th>
-                              </tr>
-                          </thead>
-                          <tbody class="grey-text">
-                              <tr>
-                                  <td>Account Name</td>
-                                  <td>test</td>
-                              </tr>
-                              <tr>
-                                  <td>Account Number</td>
-                                  <td>test</td>
-                              </tr>
-                              <tr>
-                                  <td>Branch Name</td>
-                                  <td>test</td>
-                              </tr>
-                              <tr>
-                                  <td>Account Balance</td>
-                                  <td>test</td>
-                              </tr>
-                          </tbody>
-                        </table>
-                    </div>
-                </div>
-              </div>
+            </div>
           </div>
-    </div>
-<!-- /.Main -->
+      </div>
+</div>

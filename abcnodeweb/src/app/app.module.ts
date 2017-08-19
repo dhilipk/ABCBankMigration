@@ -15,6 +15,8 @@ import { BaseRequestOptions, HttpModule, Http, XHRBackend, RequestOptions } from
 
 import { AuthenticationService } from './authentication/authentication.service';
 import { AuthenticateGuard } from './guard/authenticate.guard';
+import { AccountsHeaderComponent } from './accounts-header/accounts-header.component';
+import { AccountStatementComponent } from './accounts/account-statement/account-statement.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AuthenticateGuard } from './guard/authenticate.guard';
     DashboardComponent,
     AccountsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AccountsHeaderComponent,
+    AccountStatementComponent
   ],
   imports: [
     BrowserModule,
