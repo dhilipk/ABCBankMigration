@@ -1,6 +1,6 @@
 <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark bg-purple scrolling-navbar" [containerInside]="false">
     <logo>
-        <a class="logo navbar-brand">
+        <a class="logo navbar-brand animated bounce infinite">
           <span class="h2-responsice font-bold" style="color:#FFF">ABC</span>
           <br>
           <span class="h2-responsice font-bold" style="color:#FFF">BANK</span>
@@ -33,7 +33,7 @@
         <ul class="navbar-nav ml-auto">
           <li>
             <div class="text-center">
-                <button class="btn btn-default mt-1 waves-effect waves-light" data-toggle="modal" data-target="#basicExample" (click)="side.show()" mdbRippleRadius>
+                <button class="btn btn-default mt-1 waves-effect waves-light z-depth-2" data-toggle="modal" data-target="#basicExample" (click)="side.show()" mdbRippleRadius>
                   Logout <i class="fa fa-sign-in ml-1"></i>
                 </button>
             </div>
@@ -51,8 +51,8 @@
               </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary waves-light" data-dismiss="modal" (click)="side.hide()" mdbRippleRadius>Cancel</button>
-                <button type="button" class="btn btn-warning waves-light" (click)="logout()" (click)="side.hide()" mdbRippleRadius>Confirm</button>
+                <button type="button" class="btn btn-secondary waves-light waves-effect z-depth-2" data-dismiss="modal" (click)="side.hide()" mdbRippleRadius>Cancel</button>
+                <button type="button" class="btn btn-warning waves-light waves-effect z-depth-2" (click)="logout()" (click)="side.hide()" mdbRippleRadius>Confirm</button>
             </div>
         </div>
     </div>
