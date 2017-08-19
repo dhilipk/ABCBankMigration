@@ -6,10 +6,10 @@ import { SignInComponent } from '../sign-in/sign-in.component';
 import { AccountsComponent } from '../accounts/accounts.component';
 
 const routes: Routes = [
-    { path: '', component: DashboardComponent },
+    { path: 'aboutUs', component: DashboardComponent },
     { path: 'signIn', component: SignInComponent },
     { path: 'accounts', component: AccountsComponent },
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: 'aboutUs' }
 ];
 
 @NgModule({
