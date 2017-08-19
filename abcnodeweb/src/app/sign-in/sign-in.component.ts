@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../authentication/authentication.service';
 
@@ -22,7 +22,7 @@ export class SignInComponent implements OnInit {
     this.authenticationService.login(this.model.username, this.model.password)
     .subscribe(result => {
       if (result === true) {
-        this.router.navigate(['/accounts']);
+        this.router.navigate(['/accounts/summary']);
       } else {
         this.loading = false;
       }

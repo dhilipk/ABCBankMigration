@@ -17,6 +17,10 @@ import { AuthenticationService } from './authentication/authentication.service';
 import { AuthenticateGuard } from './guard/authenticate.guard';
 import { AccountsHeaderComponent } from './accounts-header/accounts-header.component';
 import { AccountStatementComponent } from './accounts/account-statement/account-statement.component';
+import { CobComponent } from './cob/cob.component';
+import { BankingComponent } from './banking/banking.component';
+import { BenificiaryComponent } from './banking/benificiary/benificiary.component';
+import { FundTransferComponent } from './banking/fund-transfer/fund-transfer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { AccountStatementComponent } from './accounts/account-statement/account-
     HeaderComponent,
     FooterComponent,
     AccountsHeaderComponent,
-    AccountStatementComponent
+    AccountStatementComponent,
+    CobComponent,
+    BankingComponent,
+    BenificiaryComponent,
+    FundTransferComponent
   ],
   imports: [
     BrowserModule,
