@@ -9,6 +9,7 @@ public class User {
     private String id;
     private String username;
 	private String password;
+	private String token;
 	
 	public User() {
     }
@@ -37,16 +38,26 @@ public class User {
 		this.password = password;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
+	public String getToken() {
+		return token;
 	}
 
-	public User(String id, String username, String password) {
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public User(String id, String username, String password, String token) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
+		this.token = token;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", token=" + token + "]";
+	}
+	
 
 }

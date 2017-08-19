@@ -1,5 +1,8 @@
 package com.bfs.service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -28,23 +31,27 @@ public class UserAuthenticationService {
 	}
 	
 	@RequestMapping(value = "/v1/user/authenticate", method = RequestMethod.POST)
-    public User authenticate(@RequestBody User user) {
+    public Map<String, String> authenticate(@RequestBody User user) {
+		Map<String, String> map = new HashMap<String, String>();
 		User userFromDB = userMongoRepository.findByUsername(user.getUsername());
 		if ((userFromDB.getUsername().equals(user.getUsername())) && (userFromDB.getPassword().equals(user.getPassword()))) {
-			return user;
+			map.put("token", userFromDB.getToken());
+			return map;
+		} else {
+			map.put("token", "");
+			return map;
 		}
-		return null;
     }
 	
 	@Bean
     public CommandLineRunner populateData(UserMongoRepository userMongoRepository) {
         return (args) -> {
         	if(userMongoRepository.findAll().size() == 0) {
-        		User manojc = new User("1", "manojc", "manojc");
-	        	User logeshwaranp = new User("2", "logeshwaranp", "logeshwaranp");
-	        	User jonese = new User("3", "jonese", "jonese");
-	        	User dhilipk = new User("4", "dhilipk", "dhilipk");
-	        	User berchmansa = new User("5", "berchmansa", "berchmansa");
+        		User manojc = new User("1", "manojc", "manojc", "1666752410ahkleuy");
+	        	User logeshwaranp = new User("2", "logeshwaranp", "logeshwaranp", "1666752410ahkleuy");
+	        	User jonese = new User("3", "jonese", "jonese", "1666752410ahkleuy");
+	        	User dhilipk = new User("4", "dhilipk", "dhilipk", "1666752410ahkleuy");
+	        	User berchmansa = new User("5", "berchmansa", "berchmansa", "1666752410ahkleuy");
 	        	userMongoRepository.save(manojc);
 	        	userMongoRepository.save(logeshwaranp);
 	        	userMongoRepository.save(jonese);
