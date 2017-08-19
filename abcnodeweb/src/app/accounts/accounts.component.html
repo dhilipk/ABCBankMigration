@@ -4,28 +4,34 @@
         <div class="container">
             <div class="card">
                 <div class="card-body">
-                  <table class="table table-hover account-summary">
+                  <table class="table table-hover account-summary z-depth-5">
                       <thead class="mdb-color darken-3">
                           <tr class="text-white">
-                              <th colspan="2" class="text-center">Account Summary</th>
+                              <th colspan="2" class="text-center">
+                                  <h4>Account Summary</h4>
+                              </th>
                           </tr>
                       </thead>
-                      <tbody class="grey-text">
+                      <tbody class="purple-text">
                           <tr>
                               <td>Account Name</td>
-                              <td>test</td>
+                              <td>{{accountSummary.accountHolderName}}</td>
                           </tr>
                           <tr>
                               <td>Account Number</td>
-                              <td>test</td>
+                              <td>{{accountSummary.accountNo}}</td>
                           </tr>
                           <tr>
                               <td>Branch Name</td>
-                              <td>test</td>
+                              <td>{{accountSummary.branch}}</td>
                           </tr>
                           <tr>
                               <td>Account Balance</td>
-                              <td>test</td>
+                              <td>{{accountSummary.balance}}</td>
+                          </tr>
+                          <tr>
+                              <td>Account Type</td>
+                              <td>{{accountSummary.accountType}}</td>
                           </tr>
                       </tbody>
                     </table>
