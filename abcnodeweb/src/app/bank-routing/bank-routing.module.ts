@@ -5,9 +5,9 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 import { SignInComponent } from '../sign-in/sign-in.component';
 
 const routes: Routes = [
-    { path: '', component: DashboardComponent },
+    { path: 'aboutUs', component: DashboardComponent },
     { path: 'signIn', component: SignInComponent },
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: 'aboutUs' }
 ];
 
 @NgModule({
