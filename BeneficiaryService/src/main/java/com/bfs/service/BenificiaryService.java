@@ -52,15 +52,15 @@ public class BenificiaryService {
 		
 		return  (args) -> {
 			if (beneficiaryMongoRepository.findAll().size() == 0) {
-				Beneficiary beneficiary =  new Beneficiary("BID0010","345256784545","Bhargav Ram","Savings","HDFC0010","HDFC BANK","bhargav@gmail.com","Dhilip",new Date());
+				Beneficiary beneficiary =  new Beneficiary("BID0010","345256784545","Berchmans Arul","Savings","HDFC0010","HDFC BANK","berchmans@gmail.com","Dhilip",new Date());
 				beneficiaryMongoRepository.save(beneficiary);
-				Beneficiary beneficiary1 =  new Beneficiary("BID0011","555256784526","Alex Pandian","Current","CITI505","CITY BANK","alex@gmail.com","Dhilip",new Date());
+				Beneficiary beneficiary1 =  new Beneficiary("BID0011","555256784526","Dhilip Kumar","Current","CITI505","CITY BANK","dhilip@gmail.com","Dhilip",new Date());
 				beneficiaryMongoRepository.save(beneficiary1);
-				Beneficiary beneficiary2 =  new Beneficiary("BID0012","849256784545","Velmurugan","Savings","SBI0056","SBI BANK","velmurugan@gmail.com","Dhilip",new Date());
+				Beneficiary beneficiary2 =  new Beneficiary("BID0012","849256784545","Manoj Christopher","Savings","SBI0056","SBI BANK","manoj@gmail.com","Dhilip",new Date());
 				beneficiaryMongoRepository.save(beneficiary2);
-				Beneficiary beneficiary3 =  new Beneficiary("BID0013","655146784596","Kathir Velan","Savings","IND2356","INDIAN BANK","kathir@gmail.com","Dhilip",new Date());
+				Beneficiary beneficiary3 =  new Beneficiary("BID0013","655146784596","Logeswaran","Savings","IND2356","INDIAN BANK","logesh@gmail.com","Dhilip",new Date());
 				beneficiaryMongoRepository.save(beneficiary3);
-				Beneficiary beneficiary4 =  new Beneficiary("BID0014","985256784335","Vivek Kumar","Current","HBSC263","HSBC BANK","vivek@gmail.com","Dhilip",new Date());
+				Beneficiary beneficiary4 =  new Beneficiary("BID0014","985256784335","Jones Bastin Xavier","Current","HBSC263","HSBC BANK","jones@gmail.com","Dhilip",new Date());
 				beneficiaryMongoRepository.save(beneficiary4);
 			}
 		};
