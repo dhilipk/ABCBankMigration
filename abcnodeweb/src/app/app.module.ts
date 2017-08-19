@@ -11,6 +11,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { BaseRequestOptions, HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
+
+import { AuthenticationService } from './authentication/authentication.service';
 
 @NgModule({
   declarations: [
@@ -24,10 +27,13 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
+    HttpModule,
     FormsModule,
     BankRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthenticationService
+  ],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
