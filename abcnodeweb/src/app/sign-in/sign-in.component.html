@@ -4,6 +4,7 @@
 <!--Dashboard-->
 <div class="view hm-black-light">
     <div class="full-bg-img flex-center">
+    <form class="form-signin" (ngSubmit)="login()">
       <section>
           <div class="card" style="width: 28rem;">
               <div class="card-body">
@@ -23,11 +24,12 @@
                       <label for="defaultForm-pass">Your password</label>
                   </div>
                   <div class="text-center">
-                      <button class="btn btn-default waves-effect waves-light">Sign In</button>
+                      <button [disabled]="validationInProgress" class="btn btn-default waves-effect waves-light" type="submit">Sign In</button>
                   </div>
               </div>
           </div>
       </section>
+      </form>
     </div>
 </div>
 <!--/.Dashboard-->

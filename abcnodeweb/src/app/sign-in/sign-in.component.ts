@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  validationInProgress: Boolean = false;
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  public login() {
+    this.validationInProgress = true;
+    this.router.navigate(['/accounts']);
+  }
 }
