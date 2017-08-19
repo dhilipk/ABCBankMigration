@@ -16,15 +16,15 @@
                               <th class="text-center">Balance</th>
                           </tr>
                       </thead>
-                      <tbody class="grey-text">
+                      <tbody class="grey-text" *ngFor="let statement of statements">
                           <tr>
-                              <td>Date</td>
-                              <td>Narration</td>
-                              <td>Check/Ref.No</td>
-                              <td>Value Date</td>
-                              <td>Withdraw</td>
-                              <td>Deposit</td>
-                              <td>Balance</td>
+                              <td>15/07/2017</td>
+                              <td>{{statement.fromAccount}}</td>
+                              <td>{{statement.transactionId}}</td>
+                              <td>15/07/2017</td>
+                              <td>{{statement.withdraw}}</td>
+                              <td>{{statement.deposit}}</td>
+                              <td>{{statement.balance}}</td>
                           </tr>
                       </tbody>
                     </table>

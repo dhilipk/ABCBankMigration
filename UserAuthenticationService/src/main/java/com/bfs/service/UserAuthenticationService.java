@@ -35,7 +35,7 @@ public class UserAuthenticationService {
     public Map<String, String> authenticate(@RequestBody User user) {
 		Map<String, String> map = new HashMap<String, String>();
 		User userFromDB = userMongoRepository.findByUsername(user.getUsername());
-		if ((userFromDB.getUsername().equals(user.getUsername())) && (userFromDB.getPassword().equals(user.getPassword()))) {
+		if (userFromDB != null && (userFromDB.getUsername().equals(user.getUsername())) && (userFromDB.getPassword().equals(user.getPassword()))) {
 			map.put("token", userFromDB.getToken());
 			return map;
 		} else {
