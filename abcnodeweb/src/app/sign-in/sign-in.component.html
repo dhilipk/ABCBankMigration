@@ -15,16 +15,16 @@
                   <!--Body-->
                   <div class="md-form">
                       <i class="fa fa-envelope prefix grey-text"></i>
-                      <input type="text" id="defaultForm-email" class="form-control">
-                      <label for="defaultForm-email">Your email</label>
+                      <input type="text" id="username" name="username" class="form-control" required minlength="3" [(ngModel)]="username">
+                      <label for="username">Your username</label>
                   </div>
                   <div class="md-form">
                       <i class="fa fa-lock prefix grey-text"></i>
-                      <input type="password" id="defaultForm-pass" class="form-control">
-                      <label for="defaultForm-pass">Your password</label>
+                      <input type="password" id="password" name="password" class="form-control" required minlength="3" [(ngModel)]="password">
+                      <label for="password">Your password</label>
                   </div>
                   <div class="text-center">
-                      <button [disabled]="validationInProgress" class="btn btn-default waves-effect waves-light" type="submit">Sign In</button>
+                      <button [disabled]="validationInProgress" class="btn btn-default waves-effect waves-light hoverable z-depth-5" type="submit">Sign In</button>
                   </div>
               </div>
           </div>
