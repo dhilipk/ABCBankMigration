@@ -6,43 +6,43 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "fund")
 public class FundTransfer {
 	@Id
-    private String fundtransferid;
-    private String fromaccount;
-    private String toaccount;
-    private String accounttype;
+    private String fundTransferId;
+    private String fromAccount;
+    private String toAccount;
+    private String accountType;
 	private String amount;
 	private String remarks;
-    private String withdrow;
+    private String withdraw;
     private String deposit;
     private String balance;
-    private String tranfertype;
-    private String transactionid;
-    private String transfsby;
-    private String transfsdate;
-        
-	public String getFundtransferid() {
-		return fundtransferid;
+    private String transferType;
+    private String transactionId;
+    private String transferBy;
+    private String transferDate;
+
+	public String getFundTransferId() {
+		return fundTransferId;
 	}
-	public void setFundtransferid(String fundtransferid) {
-		this.fundtransferid = fundtransferid;
+	public void setFundTransferId(String fundTransferId) {
+		this.fundTransferId = fundTransferId;
 	}
-	public String getFromaccount() {
-		return fromaccount;
+	public String getFromAccount() {
+		return fromAccount;
 	}
-	public void setFromaccount(String fromaccount) {
-		this.fromaccount = fromaccount;
+	public void setFromAccount(String fromAccount) {
+		this.fromAccount = fromAccount;
 	}
-	public String getToaccount() {
-		return toaccount;
+	public String getToAccount() {
+		return toAccount;
 	}
-	public void setToaccount(String toaccount) {
-		this.toaccount = toaccount;
+	public void setToAccount(String toAccount) {
+		this.toAccount = toAccount;
 	}
-	public String getAccounttype() {
-		return accounttype;
+	public String getAccountType() {
+		return accountType;
 	}
-	public void setAccounttype(String accounttype) {
-		this.accounttype = accounttype;
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
 	}
 	public String getAmount() {
 		return amount;
@@ -56,11 +56,11 @@ public class FundTransfer {
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
-	public String getWithdrow() {
-		return withdrow;
+	public String getWithdraw() {
+		return withdraw;
 	}
-	public void setWithdrow(String withdrow) {
-		this.withdrow = withdrow;
+	public void setWithdraw(String withdraw) {
+		this.withdraw = withdraw;
 	}
 	public String getDeposit() {
 		return deposit;
@@ -74,29 +74,32 @@ public class FundTransfer {
 	public void setBalance(String balance) {
 		this.balance = balance;
 	}
-	public String getTranfertype() {
-		return tranfertype;
+	public String getTransferType() {
+		return transferType;
 	}
-	public void setTranfertype(String tranfertype) {
-		this.tranfertype = tranfertype;
+	public void setTransferType(String transferType) {
+		this.transferType = transferType;
 	}
-	public String getTransactionid() {
-		return transactionid;
+	public String getTransactionId() {
+		return transactionId;
 	}
-	public void setTransactionid(String transactionid) {
-		this.transactionid = transactionid;
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
 	}
-	public String getTransfsby() {
-		return transfsby;
+	public String getTransferBy() {
+		return transferBy;
 	}
-	public void setTransfsby(String transfsby) {
-		this.transfsby = transfsby;
+	public void setTransferBy(String transferBy) {
+		this.transferBy = transferBy;
 	}
-	public String getTransfsdate() {
-		return transfsdate;
+	public String getTransferDate() {
+		return transferDate;
 	}
-	public void setTransfsdate(String transfsdate) {
-		this.transfsdate = transfsdate;
+	public void setTransferDate(String transferDate) {
+		this.transferDate = transferDate;
 	}
-	
+	public FundTransfer() {
+
+	}
+
 }

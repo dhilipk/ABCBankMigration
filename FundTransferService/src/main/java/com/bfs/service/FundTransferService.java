@@ -28,18 +28,13 @@ public class FundTransferService {
 		SpringApplication.run(FundTransferService.class, args);
 	}
 	
-	@RequestMapping(value = "/v1/benificiary/save", method = RequestMethod.POST)
-    public FundTransfer register(@RequestBody FundTransfer beneficiary) {
-		return fundTransferMongoRepository.save(beneficiary);
+	@RequestMapping(value = "/v1/funding/save", method = RequestMethod.POST)
+    public FundTransfer fundTransfer(@RequestBody FundTransfer funding) {
+		return fundTransferMongoRepository.insert(funding);
     }
 	
-	@RequestMapping(value = "/v1/benificiary", method = RequestMethod.GET)
-    public FundTransfer findByUsername(@QueryParam("fromdate") String fromdate, @QueryParam("todate") String todate) {
-		return fundTransferMongoRepository.findByTransfsdate(fromdate, todate);
-    }
-	
-	@RequestMapping(value = "/v1/testapp", method = RequestMethod.GET)
-    public String testApp() {
-		return "Application is Running";
+	@RequestMapping(value = "/v1/funding", method = RequestMethod.GET)
+    public FundTransfer getTransferDetails(@QueryParam("fromdate") String fromdate, @QueryParam("todate") String todate) {
+		return fundTransferMongoRepository.findByTransferDate(fromdate, todate);
     }
 }
