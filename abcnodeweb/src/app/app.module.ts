@@ -14,6 +14,8 @@ import { FooterComponent } from './footer/footer.component';
 import { BaseRequestOptions, HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 
 import { AuthenticationService } from './authentication/authentication.service';
+import { AccountsHeaderComponent } from './accounts-header/accounts-header.component';
+import { AccountStatementComponent } from './accounts/account-statement/account-statement.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AuthenticationService } from './authentication/authentication.service';
     DashboardComponent,
     AccountsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AccountsHeaderComponent,
+    AccountStatementComponent
   ],
   imports: [
     BrowserModule,
