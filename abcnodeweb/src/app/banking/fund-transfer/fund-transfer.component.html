@@ -1,4 +1,27 @@
 <app-accounts-header></app-accounts-header>
-<p>
-  fund-transfer works!
-</p>
+<div class="hm-black-light" style="height: 100%;">
+    <div class="full-bg-img flex-center">
+        <form class="form-signin animated fadeInUp" style="padding-top: 5%" (ngSubmit)="transfer()">
+            <div class="card" style="width: 19rem;">
+                <div class="card-body">
+                    <!--Header-->
+                    <div class="form-header default-color">
+                        <h3>Fund Transfer</h3>
+                    </div>
+                    <!--Body-->
+                    <div class="md-form">
+                        <input type="text" id="amount" name="amount" class="form-control" style="width: 70%" required minlength="3" [(ngModel)]="model.amount">
+                        <label for="amount">Amount</label>
+                    </div>
+                    <div class="md-form">
+                        <textarea type="text" id="remarks" name="remarks" class="md-textarea" style="width: 70%; height: 100px" [(ngModel)]="model.remarks"></textarea>
+                        <label for="remarks">Remarks</label>
+                    </div>
+                    <div class="text-center">
+                        <button [disabled]="validationInProgress" class="btn btn-default waves-effect waves-light hoverable z-depth-5" type="submit">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
