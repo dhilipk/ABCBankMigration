@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fund-transfer.component.scss']
 })
 export class FundTransferComponent implements OnInit {
+  model: any = {};
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public transfer() {
+  
   }
 
 }
