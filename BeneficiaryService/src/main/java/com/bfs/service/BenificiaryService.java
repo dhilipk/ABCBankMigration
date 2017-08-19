@@ -1,6 +1,7 @@
 package com.bfs.service;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.ws.rs.QueryParam;
 
@@ -37,8 +38,8 @@ public class BenificiaryService {
     }
 	
 	@RequestMapping(value = "/v1/benificiary", method = RequestMethod.GET)
-    public Beneficiary findByUsername(@QueryParam("createdby") String createdby) {
-		return beneficiaryMongoRepository.findByCreatedby(createdby);
+    public List<Beneficiary> findByUsername(@QueryParam("createdBy") String createdBy) {
+		return beneficiaryMongoRepository.findByCreatedBy(createdBy);
     }
 	
 	@RequestMapping(value = "/v1/testapp", method = RequestMethod.GET)
