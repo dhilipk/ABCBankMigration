@@ -1,5 +1,7 @@
 package com.bfs.service.entity;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,9 +20,9 @@ public class FundTransfer {
     private String transferType;
     private String transactionId;
     private String transferBy;
-    private String transferDate;
-
-	public String getFundTransferId() {
+    private Date transferDate;
+	
+    public String getFundTransferId() {
 		return fundTransferId;
 	}
 	public void setFundTransferId(String fundTransferId) {
@@ -92,14 +94,39 @@ public class FundTransfer {
 	public void setTransferBy(String transferBy) {
 		this.transferBy = transferBy;
 	}
-	public String getTransferDate() {
+	public Date getTransferDate() {
 		return transferDate;
 	}
-	public void setTransferDate(String transferDate) {
+	public void setTransferDate(Date transferDate) {
 		this.transferDate = transferDate;
 	}
-	public FundTransfer() {
-
+	public FundTransfer(String fundTransferId, String fromAccount, String toAccount, String accountType, String amount,
+			String remarks, String withdraw, String deposit, String balance, String transferType, String transactionId,
+			String transferBy, Date transferDate) {
+		super();
+		this.fundTransferId = fundTransferId;
+		this.fromAccount = fromAccount;
+		this.toAccount = toAccount;
+		this.accountType = accountType;
+		this.amount = amount;
+		this.remarks = remarks;
+		this.withdraw = withdraw;
+		this.deposit = deposit;
+		this.balance = balance;
+		this.transferType = transferType;
+		this.transactionId = transactionId;
+		this.transferBy = transferBy;
+		this.transferDate = transferDate;
 	}
+	@Override
+	public String toString() {
+		return "FundTransfer [fundTransferId=" + fundTransferId + ", fromAccount=" + fromAccount + ", toAccount="
+				+ toAccount + ", accountType=" + accountType + ", amount=" + amount + ", remarks=" + remarks
+				+ ", withdraw=" + withdraw + ", deposit=" + deposit + ", balance=" + balance + ", transferType="
+				+ transferType + ", transactionId=" + transactionId + ", transferBy=" + transferBy + ", transferDate="
+				+ transferDate + "]";
+	}
+
+	
 
 }

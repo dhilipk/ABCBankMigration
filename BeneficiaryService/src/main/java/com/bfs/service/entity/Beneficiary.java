@@ -1,26 +1,27 @@
 package com.bfs.service.entity;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "beneficiary")
 public class Beneficiary {
 	@Id
-    private String beneficiaryid;
+    private String beneficiaryId;
     private String accountnumber;
     private String accountHoldername;
-    private String accounttype;
+    private String accountType;
 	private String ifsc;
 	private String bank;
     private String email;
-    private String createdby;
-    private String updatedate;
-    
-	public String getBeneficiaryid() {
-		return beneficiaryid;
+    private String createdBy;
+    private Date updatedDate;
+	public String getBeneficiaryId() {
+		return beneficiaryId;
 	}
-	public void setBeneficiaryid(String beneficiaryid) {
-		this.beneficiaryid = beneficiaryid;
+	public void setBeneficiaryId(String beneficiaryId) {
+		this.beneficiaryId = beneficiaryId;
 	}
 	public String getAccountnumber() {
 		return accountnumber;
@@ -34,11 +35,11 @@ public class Beneficiary {
 	public void setAccountHoldername(String accountHoldername) {
 		this.accountHoldername = accountHoldername;
 	}
-	public String getAccounttype() {
-		return accounttype;
+	public String getAccountType() {
+		return accountType;
 	}
-	public void setAccounttype(String accounttype) {
-		this.accounttype = accounttype;
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
 	}
 	public String getIfsc() {
 		return ifsc;
@@ -58,18 +59,37 @@ public class Beneficiary {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getCreatedby() {
-		return createdby;
+	public String getCreatedBy() {
+		return createdBy;
 	}
-	public void setCreatedby(String createdby) {
-		this.createdby = createdby;
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
-	public String getUpdatedate() {
-		return updatedate;
+	public Date getUpdatedDate() {
+		return updatedDate;
 	}
-	public void setUpdatedate(String updatedate) {
-		this.updatedate = updatedate;
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
 	}
-    
-    
+	public Beneficiary(String beneficiaryId, String accountnumber, String accountHoldername, String accountType,
+			String ifsc, String bank, String email, String createdBy, Date updatedDate) {
+		super();
+		this.beneficiaryId = beneficiaryId;
+		this.accountnumber = accountnumber;
+		this.accountHoldername = accountHoldername;
+		this.accountType = accountType;
+		this.ifsc = ifsc;
+		this.bank = bank;
+		this.email = email;
+		this.createdBy = createdBy;
+		this.updatedDate = updatedDate;
+	}
+	@Override
+	public String toString() {
+		return "Beneficiary [beneficiaryId=" + beneficiaryId + ", accountnumber=" + accountnumber
+				+ ", accountHoldername=" + accountHoldername + ", accountType=" + accountType + ", ifsc=" + ifsc
+				+ ", bank=" + bank + ", email=" + email + ", createdBy=" + createdBy + ", updatedDate=" + updatedDate
+				+ "]";
+	}
+	
 }
