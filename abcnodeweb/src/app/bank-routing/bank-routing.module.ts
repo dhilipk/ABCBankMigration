@@ -19,6 +19,8 @@ const routes: Routes = [
     { path: 'banking/fundTransfer', component: FundTransferComponent },
     { path: 'banking/benificiary', component: BenificiaryComponent },
     { path: 'cob', component: CobComponent },
+    { path: 'accounts', component: AccountsComponent },
+    { path: 'accounts/summary', component: AccountsComponent },
     { path: '**', redirectTo: 'aboutUs' }
 ];
 
