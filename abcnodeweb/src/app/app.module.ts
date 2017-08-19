@@ -14,6 +14,13 @@ import { FooterComponent } from './footer/footer.component';
 import { BaseRequestOptions, HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 
 import { AuthenticationService } from './authentication/authentication.service';
+import { AuthenticateGuard } from './guard/authenticate.guard';
+import { AccountsHeaderComponent } from './accounts-header/accounts-header.component';
+import { AccountStatementComponent } from './accounts/account-statement/account-statement.component';
+import { CobComponent } from './cob/cob.component';
+import { BankingComponent } from './banking/banking.component';
+import { BenificiaryComponent } from './banking/benificiary/benificiary.component';
+import { FundTransferComponent } from './banking/fund-transfer/fund-transfer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +29,13 @@ import { AuthenticationService } from './authentication/authentication.service';
     DashboardComponent,
     AccountsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AccountsHeaderComponent,
+    AccountStatementComponent,
+    CobComponent,
+    BankingComponent,
+    BenificiaryComponent,
+    FundTransferComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +45,9 @@ import { AuthenticationService } from './authentication/authentication.service';
     BankRoutingModule
   ],
   providers: [
-    AuthenticationService
+    AuthenticateGuard,
+    AuthenticationService,
+    BaseRequestOptions
   ],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]

@@ -4,23 +4,23 @@
 <!--Dashboard-->
 <div class="view hm-black-light">
     <div class="full-bg-img flex-center">
-    <form class="form-signin" (ngSubmit)="login()">
+    <form class="form-signin animated fadeInUp" style="padding-top: 5%" (ngSubmit)="login()">
       <section>
-          <div class="card" style="width: 28rem;">
+          <div class="card" style="width: 19rem;">
               <div class="card-body">
                   <!--Header-->
                   <div class="form-header default-color">
-                      <h3><i class="fa fa-lock"></i> Sign In:</h3>
+                      <h3><i class="fa fa-lock"></i> Sign In</h3>
                   </div>
                   <!--Body-->
                   <div class="md-form">
                       <i class="fa fa-envelope prefix grey-text"></i>
-                      <input type="text" id="username" name="username" class="form-control" required minlength="3" [(ngModel)]="model.username">
+                      <input type="text" id="username" name="username" class="form-control" style="width: 70%" required minlength="3" [(ngModel)]="model.username">
                       <label for="username">Your username</label>
                   </div>
                   <div class="md-form">
                       <i class="fa fa-lock prefix grey-text"></i>
-                      <input type="password" id="password" name="password" class="form-control" required minlength="3" [(ngModel)]="model.password">
+                      <input type="password" id="password" name="password" class="form-control" style="width: 70%" required minlength="3" [(ngModel)]="model.password">
                       <label for="password">Your password</label>
                   </div>
                   <div class="text-center">

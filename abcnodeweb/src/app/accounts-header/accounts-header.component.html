@@ -1,0 +1,30 @@
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark bg-purple scrolling-navbar" [containerInside]="false">
+    <logo>
+        <a class="logo navbar-brand"><strong>Navbar</strong></a>
+    </logo>
+    <links>
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown waves-light" dropdown>
+                <a dropdownToggle class="nav-link dropdown-toggle waves-light" mdbRippleRadius>Account<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" [routerLink]="['/accounts/summary']"mdbRippleRadius>Summary</a>
+                    <a class="dropdown-item waves-light" [routerLink]="['/accounts/viewStatement']" mdbRippleRadius>View Statement</a>
+                    <a class="dropdown-item waves-light" mdbRippleRadius>Fixed Deposit</a>
+                    <a class="dropdown-item waves-light" mdbRippleRadius>Recurring Deposit</a>
+                    <a class="dropdown-item waves-light" mdbRippleRadius>TDS Enquire</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown waves-light" dropdown>
+                <a dropdownToggle class="nav-link dropdown-toggle waves-light" mdbRippleRadius>Banking<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" [routerLink]="['/banking/fundTransfer']" mdbRippleRadius>Funds Transfer</a>
+                    <a class="dropdown-item waves-light" [routerLink]="['/banking/benificiary']" mdbRippleRadius>Benificiary</a>
+                    <a class="dropdown-item waves-light" mdbRippleRadius>Special Payments</a>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link waves-light" [routerLink]="['/cob']" mdbRippleRadius>COB</a>
+            </li>
+        </ul>
+    </links>
+</mdb-navbar>

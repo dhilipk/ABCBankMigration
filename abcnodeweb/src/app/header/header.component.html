@@ -1,20 +1,15 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" [containerInside]="false">
-    <div class="container">
-      <logo>
-          <a class="logo navbar-brand" href="#"><strong>LOGO</strong></a>
-      </logo>
-      <links>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>
-                <a class="nav-link" [routerLink]="['/aboutUs']">About Us <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>
-                <a class="nav-link" [routerLink]="['/signIn']">Sign In</a>
-            </li>
-          </ul>
-      </links>
-    </div>
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" [containerInside]="false">
+    <logo>
+        <a class="logo navbar-brand" href="#"><img class="logo" src="../../assets/images/logo.jpg" style="width: 100%"/></a>
+    </logo>
+    <links>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>
+            <a class="nav-link" [routerLink]="['/aboutUs']">About Us <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item waves-light" routerLinkActive="active" mdbRippleRadius>
+            <a class="nav-link" [routerLink]="['/signIn']">Sign In</a>
+        </li>
+      </ul>
+    </links>
 </mdb-navbar>
