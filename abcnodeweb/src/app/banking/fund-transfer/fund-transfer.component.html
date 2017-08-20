@@ -10,11 +10,19 @@
                     </div>
                     <!--Body-->
                     <div class="md-form">
-                        <input type="text" id="amount" name="amount" class="form-control" style="width: 70%" required minlength="3" [(ngModel)]="model.amount">
+                        <input type="text" id="fromAccount" value="{{accountSummary.accountNo}}" name="fromAccount" class="form-control" style="width: 90%" [(ngModel)]="model.fromAccount" disabled>
+                        <label for="fromAccount" class="disabled">From Account</label>
+                    </div>
+                    <div class="md-form">
+                        <input type="text" id="toAccount" name="toAccount" class="form-control" style="width: 90%" [(ngModel)]="model.toAccount">
+                        <label for="toAccount" class="disabled">To Account</label>
+                    </div>
+                    <div class="md-form">
+                        <input type="text" id="amount" name="amount" class="form-control" style="width: 90%" required minlength="3" [(ngModel)]="model.amount">
                         <label for="amount">Amount</label>
                     </div>
                     <div class="md-form">
-                        <textarea type="text" id="remarks" name="remarks" class="md-textarea" style="width: 70%; height: 100px" [(ngModel)]="model.remarks"></textarea>
+                        <textarea type="text" id="remarks" name="remarks" class="md-textarea" style="height: 50px" [(ngModel)]="model.remarks"></textarea>
                         <label for="remarks">Remarks</label>
                     </div>
                     <div class="text-center">

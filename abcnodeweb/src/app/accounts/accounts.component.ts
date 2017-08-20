@@ -10,6 +10,7 @@ import 'rxjs/add/operator/map';
 })
 export class AccountsComponent implements OnInit {
 
+  accountSummary: any = {};
   constructor(private http: Http) { 
     this.getAccountDetails();
   }
@@ -25,6 +26,7 @@ export class AccountsComponent implements OnInit {
     this.http.get('http://localhost:8087/v1/accounts/summary', options)
       .subscribe((response: Response) => {
         console.log(response.json());
+        this.accountSummary = response.json();
     });
   }
 }

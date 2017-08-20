@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -42,7 +43,7 @@ public class FundTransferService {
     public FundTransfer fundTransfer(@RequestBody FundTransfer funding) {
 		return fundTransferMongoRepository.insert(funding);
     }
-	
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/v1/funding", method = RequestMethod.GET)
     public List<FundTransfer> getTransferDetails(@QueryParam("fromdate") String fromdate, @QueryParam("todate") String todate) {
 		/*MongoOperations mongo = (MongoOperations) mongoTemplate;
@@ -70,23 +71,6 @@ public class FundTransferService {
 				fundTransferMongoRepository.save(fundTransfer4);
 				FundTransfer fundTransfer5 =  new FundTransfer("2300505","565896321455","849256784545","Savings","Movie Ticket","600","Y","","IMPS","15700","7894512036","Dhilip",new Date());
 				fundTransferMongoRepository.save(fundTransfer5);
-				FundTransfer fundTransfer6 =  new FundTransfer("2300506","565896321455","555256784526","Current","EMI","8000","Y","","16300","NEFT","456123079","Dhilip",new Date());
-				fundTransferMongoRepository.save(fundTransfer6);
-				FundTransfer fundTransfer7 =  new FundTransfer("2300507","565896321455","345256784545","Savings","Return","4500","Y","","24300","IMPS","451368875","Dhilip",new Date());
-				fundTransferMongoRepository.save(fundTransfer7);
-				FundTransfer fundTransfer8 =  new FundTransfer("2300508","565896321455","985256784335","Current","Return","12000","Y","","28800","IMPS","4512366875","Dhilip",new Date());
-				fundTransferMongoRepository.save(fundTransfer8);
-				FundTransfer fundTransfer9 =  new FundTransfer("2300509","565896321455","655146784596","Savings","Others","1400","Y","","40800","NEFT","4512036765","Dhilip",new Date());
-				fundTransferMongoRepository.save(fundTransfer9);
-				FundTransfer fundTransfer10 =  new FundTransfer("2300510","565896321455","345256784545","Savings","Ticket","750","Y","","42200","NEFT","879545225","Dhilip",new Date());
-				fundTransferMongoRepository.save(fundTransfer10);
-				FundTransfer fundTransfer11 =  new FundTransfer("2300511","565896321455","555256784526","Current","Rent","300","Y","","42500","IMPS","6554211254","Dhilip",new Date());
-				fundTransferMongoRepository.save(fundTransfer11);
-				FundTransfer fundTransfer12 =  new FundTransfer("2300512","565896321455","849256784545","Savings","Book","7500","Y","","50000","IMPS","897856254","Dhilip",new Date());
-				fundTransferMongoRepository.save(fundTransfer12);
-				FundTransfer fundTransfer13 =  new FundTransfer("2300513","565896321455","849256784545","Savings","Book","45000","","Y","50000","NEFT","564546213","Dhilip",new Date());
-				fundTransferMongoRepository.save(fundTransfer13);
-				
 			}
 		};
 	}

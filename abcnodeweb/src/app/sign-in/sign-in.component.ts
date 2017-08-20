@@ -22,7 +22,7 @@ export class SignInComponent implements OnInit {
     this.authenticationService.login(this.model.username, this.model.password)
     .subscribe(result => {
       if (result === true) {
-        this.router.navigate(['/accounts']);
+        this.router.navigate(['/accounts/summary']);
       } else {
         this.loading = false;
       }

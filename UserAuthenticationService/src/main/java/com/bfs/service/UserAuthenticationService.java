@@ -35,7 +35,7 @@ public class UserAuthenticationService {
     public Map<String, String> authenticate(@RequestBody User user) {
 		Map<String, String> map = new HashMap<String, String>();
 		User userFromDB = userMongoRepository.findByUsername(user.getUsername());
-		if ((userFromDB.getUsername().equals(user.getUsername())) && (userFromDB.getPassword().equals(user.getPassword()))) {
+		if (userFromDB != null && (userFromDB.getUsername().equals(user.getUsername())) && (userFromDB.getPassword().equals(user.getPassword()))) {
 			map.put("token", userFromDB.getToken());
 			return map;
 		} else {
@@ -48,16 +48,8 @@ public class UserAuthenticationService {
     public CommandLineRunner populateData(UserMongoRepository userMongoRepository) {
         return (args) -> {
         	if(userMongoRepository.findAll().size() == 0) {
-        		User manojc = new User("1", "manojc", "manojc", "1666752410ahkleuy");
-	        	User logeshwaranp = new User("2", "logeshwaranp", "logeshwaranp", "1666752410ahkleuy");
-	        	User jonese = new User("3", "jonese", "jonese", "1666752410ahkleuy");
-	        	User dhilipk = new User("4", "dhilipk", "dhilipk", "1666752410ahkleuy");
-	        	User berchmansa = new User("5", "berchmansa", "berchmansa", "1666752410ahkleuy");
-	        	userMongoRepository.save(manojc);
-	        	userMongoRepository.save(logeshwaranp);
-	        	userMongoRepository.save(jonese);
-	        	userMongoRepository.save(dhilipk);
-	        	userMongoRepository.save(berchmansa);
+        		User admin = new User("1", "Admin", "admin", "Savings", "admin@gmail.com", "9874569874", "admin", "1666752410ahkleuy");
+	        	userMongoRepository.save(admin);
 	        	System.out.println("Users added at the start");
         	}
         };
