@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Headers, Response, RequestOptions, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -11,8 +12,9 @@ import 'rxjs/add/operator/map';
 export class FundTransferComponent implements OnInit {
   model: any = {};
   accountSummary: any = {};
+  showMessage: Boolean = false;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private router: Router) {
     this.getAccountDetails();
   }
 
@@ -20,7 +22,8 @@ export class FundTransferComponent implements OnInit {
   }
 
   public transfer() {
-
+    this.showMessage = true;
+    this.router.navigate(['/accounts/summary']);
   }
 
   getAccountDetails() {
@@ -33,4 +36,5 @@ export class FundTransferComponent implements OnInit {
         this.accountSummary = response.json();
     });
   }
+
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.bfs.service.entity.User;
 import com.bfs.service.repository.UserMongoRepository;
@@ -28,6 +29,7 @@ public class CustomerOnboardingService {
 		SpringApplication.run(CustomerOnboardingService.class, args);
 	}
 	
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/v1/user/onboard", method = RequestMethod.POST)
     public Map<String, String> register(@RequestBody User user) {
 		Map<String, String> map = new HashMap<String, String>();

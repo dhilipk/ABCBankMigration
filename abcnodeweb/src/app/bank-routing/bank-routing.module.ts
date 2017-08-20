@@ -16,11 +16,10 @@ const routes: Routes = [
     { path: 'signIn', component: SignInComponent },
     { path: 'accounts/summary', component: AccountsComponent, canActivate: [AuthenticateGuard] },
     { path: 'accounts/viewStatement', component: AccountStatementComponent, canActivate: [AuthenticateGuard] },
-    { path: 'banking/fundTransfer', component: FundTransferComponent },
-    { path: 'banking/benificiary', component: BenificiaryComponent },
-    { path: 'cob', component: CobComponent },
-    { path: 'accounts', component: AccountsComponent },
-    { path: 'accounts/summary', component: AccountsComponent },
+    { path: 'banking/fundTransfer', component: FundTransferComponent, canActivate: [AuthenticateGuard]  },
+    { path: 'banking/benificiary', component: BenificiaryComponent, canActivate: [AuthenticateGuard]  },
+    { path: 'cob', component: CobComponent, canActivate: [AuthenticateGuard]  },
+    { path: 'accounts', component: AccountsComponent, canActivate: [AuthenticateGuard]  },
     { path: '**', redirectTo: 'aboutUs' }
 ];
 

@@ -31,9 +31,9 @@ export class RestServiceService {
   saveOnBoardingDetails(data: object) : Observable<object> {
     let headers = new Headers({ 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('http://localhost:8083/v1/user/authenticate', JSON.stringify(data), options)
+    return this.http.post('http://localhost:8090/v1/user/onboard', JSON.stringify(data), options)
       .map((response: Response) => {
-        console.log(response);
+        console.log(response.status);
         return response;
     });
   }

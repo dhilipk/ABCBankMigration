@@ -13,7 +13,7 @@ export class CobComponent implements OnInit {
   model: any = {};
   loading: Boolean = false;
   showResponse: Boolean = false;
-  response: any = {};
+  response: object = {};
 
   constructor(private http:Http, private service:RestServiceService, private router: Router) { }
 
@@ -28,5 +28,9 @@ export class CobComponent implements OnInit {
       this.showResponse = true;
       this.model = {};
     });
+  }
+
+  public reset() {
+    this.model = {};
   }
 }

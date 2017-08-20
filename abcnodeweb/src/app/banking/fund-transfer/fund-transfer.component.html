@@ -1,7 +1,7 @@
 <app-accounts-header></app-accounts-header>
 <div class="hm-black-light" style="height: 100%;">
     <div class="full-bg-img flex-center">
-        <form class="form-signin animated fadeInUp" style="padding-top: 5%" (ngSubmit)="transfer()">
+        <form class="form-signin animated fadeInUp cobForm" style="padding-top: 12%" (ngSubmit)="transfer()">
             <div class="card" style="width: 19rem;">
                 <div class="card-body">
                     <!--Header-->
@@ -11,7 +11,6 @@
                     <!--Body-->
                     <div class="md-form">
                         <input type="text" id="fromAccount" value="{{accountSummary.accountNo}}" name="fromAccount" class="form-control" style="width: 90%" [(ngModel)]="model.fromAccount" disabled>
-                        <label for="fromAccount" class="disabled">From Account</label>
                     </div>
                     <div class="md-form">
                         <input type="text" id="toAccount" name="toAccount" class="form-control" style="width: 90%" [(ngModel)]="model.toAccount">

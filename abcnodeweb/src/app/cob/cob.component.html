@@ -1,6 +1,6 @@
 <app-accounts-header></app-accounts-header>
 
-<form class="form-signin animated fadeInUp cobForm" style="padding-top: 10%; padding-bottom: 5%" (ngSubmit)="saveOnBoardingDetails()">
+<form class="form-signin animated fadeInUp cobForm" style="padding-top: 10%;" (ngSubmit)="saveOnBoardingDetails()">
   <section>
       <div class="card" style="width: 50%; align-items: center; margin: auto;">
         <div class="card-body">
@@ -33,17 +33,15 @@
           </div>
 
           <div class="text-center">
-              <button class="btn btn-cyan waves-light" mdbRippleRadius >Save</button>
-              <button class="btn btn-blue-grey waves-light" mdbRippleRadius>Cancel</button>
+              <button class="btn btn-cyan waves-light z-depth-2" mdbRippleRadius type="submit">Save</button>
+              <button class="btn btn-blue-grey waves-light z-depth-2" mdbRippleRadius type="button" (click)="reset()">Reset</button>
           </div>
-          <div class="card text-center z-depth-2" *ngIf='response.message' [ngClass]="response.status === 'success' ? 'success-color' : 'red lighten-1'">
+          <div class="card text-center z-depth-2" *ngIf='loading' [ngClass]="response.status == 200 ? 'success-color' : 'red lighten-1'">
               <div class="card-body">
-                  <p class="white-text mb-0">{{response.message}}</p>
+                  <p class="white-text mb-0">Customer Successfully Onboarded</p>
               </div>
           </div>
         </div>
       </div>
     </section>
 </form>
-
-<app-footer></app-footer>
