@@ -1,1 +1,49 @@
 <app-accounts-header></app-accounts-header>
+
+<form class="form-signin animated fadeInUp cobForm" style="padding-top: 10%; padding-bottom: 5%" (ngSubmit)="saveOnBoardingDetails()">
+  <section>
+      <div class="card" style="width: 50%; align-items: center; margin: auto;">
+        <div class="card-body">
+          <h4 class="card-title cobForm">Account Holder/User Details</h4>
+          <hr>
+
+          <div class="md-form">
+              <input type="text" id="name" class="form-control" [(ngModel)]="model.name" [ngModelOptions]="{standalone: true}" mdbActive>
+              <label for="name">Full name</label>
+          </div>
+
+          <div class="md-form">
+              <input type="text" id="username" name="branch" class="form-control" [(ngModel)]="model.username" [ngModelOptions]="{standalone: true}" mdbActive>
+              <label for="username">User name</label>
+          </div>
+
+          <div class="md-form">
+              <input type="text" id="accountType" name="accountType" class="form-control" [(ngModel)]="model.accountType" [ngModelOptions]="{standalone: true}" mdbActive>
+              <label for="accountType">Account type</label>
+          </div>
+
+          <div class="md-form">
+              <input type="email" id="email" name="email" class="form-control" [(ngModel)]="model.email" [ngModelOptions]="{standalone: true}" mdbActive>
+              <label for="email">Email</label>
+          </div>
+
+          <div class="md-form">
+              <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" [(ngModel)]="model.phoneNumber" [ngModelOptions]="{standalone: true}" mdbActive>
+              <label for="phoneNumber">Phone number</label>
+          </div>
+
+          <div class="text-center">
+              <button class="btn btn-cyan waves-light" mdbRippleRadius >Save</button>
+              <button class="btn btn-blue-grey waves-light" mdbRippleRadius>Cancel</button>
+          </div>
+          <div class="card text-center z-depth-2" *ngIf='response.message' [ngClass]="response.status === 'success' ? 'success-color' : 'red lighten-1'">
+              <div class="card-body">
+                  <p class="white-text mb-0">{{response.message}}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</form>
+
+<app-footer></app-footer>

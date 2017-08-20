@@ -32,7 +32,17 @@
                 background-color: #1C2331;
             }
             .logo {
-                width: 60% !important;
+                width: 50% !important;
+            }
+            .cobForm {
+              padding-top: 30% !important;
+              font-size: 1rem;
+            }
+            .md-form label {
+              font-size: 0.8rem;
+            }
+            .form-control {
+              padding: 0.5rem 0.5rem;
             }
         }
         .navbar .btn-group .dropdown-menu a:hover {

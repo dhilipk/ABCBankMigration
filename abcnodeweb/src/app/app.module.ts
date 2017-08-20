@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BaseRequestOptions, HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 
 import { AuthenticationService } from './authentication/authentication.service';
+import { RestServiceService } from './services/rest-service.service';
 import { AuthenticateGuard } from './guard/authenticate.guard';
 import { AccountsHeaderComponent } from './accounts-header/accounts-header.component';
 import { AccountStatementComponent } from './accounts/account-statement/account-statement.component';
@@ -47,6 +48,7 @@ import { FundTransferComponent } from './banking/fund-transfer/fund-transfer.com
   providers: [
     AuthenticateGuard,
     AuthenticationService,
+    RestServiceService,
     BaseRequestOptions
   ],
   bootstrap: [AppComponent],
